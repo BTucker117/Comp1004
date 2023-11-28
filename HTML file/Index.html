@@ -14,9 +14,9 @@
             padding: 15px 50px;
             cursor: pointer;
         }
-
     </style>
     <link rel="stylesheet" type="text/css" href="teststyles.css" />
+    <script src="Script1.js"></script>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 
     <form>
         <fieldset>
-            
+
             <legend> *Name of account site* </legend>
             Date of creation: <input type="date" name="day created" />
             <br /><br />
@@ -51,6 +51,25 @@
     <p id="corner2"> Test of the second box thingy !</p>
 
     <p id="para1"> Hello All !</p>
+
+    <button type="button" name="Java Test" onclick="Clicked()"> Java Test </button>
+
+    <br>
+
+    <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1> <!--This is an internal-->
+    <h1 onclick="changeText(this)"> Java Test </h1> <!--This is using an external Java script-->
+    <br>
+    <h1 onclick="displayDate(this)">Try it</h1>
+    <button id="myBtn">Try it</button>
+    <script>
+        document.getElementById("myBtn").addEventListener("click", myFunction);
+
+        function myFunction() {
+            alert("Hello World!");
+        }
+    </script>
+
+
 
 </body>
 </html>
