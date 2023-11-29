@@ -1,0 +1,15 @@
+﻿@font-face {
+    font-family: Vogue;
+    src: url(Vogue.ttf);
+}
+
+body {
+    background-image: url(Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#Central{
+    font-family: Vogue;
+    text-align: center;
+}
