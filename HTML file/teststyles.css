@@ -30,3 +30,12 @@
     border: dashed;
     border-color: brown;
 }
+
+@font-face{
+    font-family: myFont;
+    src:url(Vogue.ttf);
+}
+
+#font-test{
+    font-family: myFont;
+}
