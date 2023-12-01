@@ -9,7 +9,19 @@ body {
     background-size: cover;
 }
 
-#Central{
+#Title{
     font-family: Vogue;
     text-align: center;
+    padding-left: 750px;
+    padding-top: 25px;
+}
+
+.img{
+    float: right;
+}
+
+.logo {
+    position: absolute;
+    left: 5px;
+    top: 5px;
 }
