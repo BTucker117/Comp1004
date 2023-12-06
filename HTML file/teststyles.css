@@ -39,3 +39,110 @@
 #font-test{
     font-family: myFont;
 }
+
+#content {
+    width: 400px;
+    padding: 20px;
+    padding-top: 0px;
+    font-size: 22px;
+    background: white;
+    font-family: 'Neue Haas Grotesk Text Pro';
+    max-height: 200px;
+    overflow: hidden;
+    /*Transition to show the rest of the info */
+    -webkit-transition: max-height 0.7s;
+    -moz-transition: max-height 0.7s;
+    transition: max-height 0.7s;
+}
+
+    #content.open {
+        max-height: 1000px;
+        /*Transition to show the rest of the info */
+        -webkit-transition: max-height 0.7s;
+        -moz-transition: max-height 0.7s;
+        transition: max-height 0.7s;
+    }
+
+#show more {
+    background: blue;
+    font-size: 22px;
+    font-family: 'Neue Haas Grotesk Text Pro';
+    display: block;
+    width: 140px;
+    text-transform: capitalize;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container h1 {
+     color: red;
+     font-size: 50px;
+     margin-bottom: 40px;
+}
+
+.button2 {
+    background: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, 0.75);
+    margin-top: 25px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+    .button2:hover {
+        background: red;
+    }
+
+.popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.popup-content {
+    height: 250px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+input {
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid grey;
+}
+
+.close {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}

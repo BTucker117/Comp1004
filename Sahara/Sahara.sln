@@ -6,8 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A6C9ED1-C954-41F9-AA09-CFC55931A55D}"
 	ProjectSection(SolutionItems) = preProject
 		Sahara Index.html = Sahara Index.html
-		Sahara Style.css = Sahara Style.css
 		Sahara Script.js = Sahara Script.js
+		Sahara_Style.css = Sahara_Style.css
 	EndProjectSection
 EndProject
 Global
