@@ -1,9 +1,15 @@
 // JavaScript source code
 
-document.getElementById("button").addEventListener("click", function (){
-    document.querySelector(".popout").style.display = "flex";
-});
+var openb = document.getElementById("open");
 
-document.getElementById(".close").addEventListener("click", function () {
-    document.querySelector(".popout").style.display = "none";
-});
+var box = document.getElementById("box");
+
+function open_box() {
+    box.style.display = "block";
+    openb.style.display = "none";
+}
+
+function close_box() {
+    box.style.display = "none";
+    openb.style.display = "block";
+}
