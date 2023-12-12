@@ -13,3 +13,13 @@ function close_box() {
     box.style.display = "none";
     openb.style.display = "block";
 }
+
+fetch('./Sahara users.json')
+    .then(function (response) {
+        return response.json();
+    }).then(function (obj) {
+        console.log(obj);
+    }).catch(function (error) {
+        console.error("Opps File not retireved!");
+        console.error(error);
+    });
