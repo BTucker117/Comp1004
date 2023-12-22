@@ -31,5 +31,3 @@ import users from './Sahara users.json' assert {type: 'json'};
 consol.log(users);
 
 */
-
-fetch('Sahara users.json');
