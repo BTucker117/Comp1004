@@ -14,6 +14,7 @@ function close_box() {
     openb.style.display = "block";
 }
 
+/*
 fetch('./Sahara users.json')
     .then(function (response) {
         return response.json();
@@ -23,3 +24,12 @@ fetch('./Sahara users.json')
         console.error("Opps File not retireved!");
         console.error(error);
     });
+
+
+import users from './Sahara users.json' assert {type: 'json'};
+
+consol.log(users);
+
+*/
+
+fetch('Sahara users.json');
