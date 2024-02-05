@@ -13,7 +13,7 @@
     <div class="img">
         <img class="logo" src="Sahara Logo.JPG" width="318" height="293" /> <!--This is the logo img in top left-->
     </div>
-    <br>     <br>     <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br
+    <br>     <br>     <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>
 
     <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>
 
@@ -112,6 +112,51 @@
     </script>
 
     <!-- END OF WORKING BUTTON ! -->
+    
+    <!-- Start of Passwrod Generator ! --> 
+    
+    <script>
 
+       function Opened() {
+            javascript: (
+                function Gener() {
+                    prompt('Your Secure Password:',
+                        window.crypto.getRandomValues(new BigUint64Array(4)).reduce(
+                            (prev, curr, index) => (
+                                !index ? prev : prev.toString(36)
+                            ) + (
+                                    index % 2 ? curr.toString(36).toUpperCase() : curr.toString(36)
+                                )
+                        ).split('').sort(() => 128 -
+                            window.crypto.getRandomValues(new Uint8Array(1))[0]
+                        ).join('')
+                    );
+                }
+            )();
+        }
+
+    </script>
+
+    <style>
+        .open2 {
+            border: none;
+            padding: 10px 25px;
+            background-color: orangered;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            position: absolute;
+            left: 100px;
+            top: 750px;
+        }
+    </style>
+    
+    <dir class="Generator">
+        <button class="open2" id="PG" onclick="Opened()">Press ME!</button>
+    </dir>
+
+    <!-- End Of Password Generator -->
+        
 </body>
 </html>

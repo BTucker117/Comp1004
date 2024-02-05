@@ -14,7 +14,7 @@ function close_box() {
     openb.style.display = "block";
 }
 
-/*
+
 fetch('./Sahara users.json')
     .then(function (response) {
         return response.json();
@@ -30,4 +30,21 @@ import users from './Sahara users.json' assert {type: 'json'};
 
 consol.log(users);
 
+/*
+import java.io.File; 
+
+File Test = canread("Sahara users.json");
+
+
+import java.util.Scanner;
+
+class MyClass {
+    public static void main(string[] args) {
+    scanner myObj = new Scanner(System.in);
+        System.out.println("Enter username");
+
+    string userName = myObj.nextLine();
+        System.out.println("Username is: " + userName);
+    }
+}
 */
