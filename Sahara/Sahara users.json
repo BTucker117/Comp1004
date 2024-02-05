@@ -1,5 +1,10 @@
 {
-	"Users":[
+	"Users": [
+		//Package .json
+		{
+			"type": "module"
+		},
+
 		{
 			"Username": "Admin",
 			"Password": "AdminUser",
