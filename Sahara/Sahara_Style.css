@@ -6,7 +6,7 @@
 body {
     background-image: url(Background.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 1475px 826.5px;
 } /*Background image added to the page body*/
 
 #Title{
@@ -54,3 +54,25 @@ p1 {
    Background colour - #787878
    Background Yellow - #fef200
 */
+
+#PGBox {
+    background: orangered;
+    border: solid #fef200;
+}
+
+#PG {
+    border: none;
+    padding: 10px 25px;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    position: absolute;
+    left: 1000px;
+    top: 1000px;
+}
+
+    #PG:hover {
+        color: red;
+    }

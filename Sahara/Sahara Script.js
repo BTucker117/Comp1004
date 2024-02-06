@@ -1,5 +1,9 @@
 // JavaScript source code
 
+
+
+console.log("Hello ?");
+
 var openb = document.getElementById("open");
 
 var box = document.getElementById("box");
@@ -15,6 +19,8 @@ function close_box() {
 }
 
 
+/*
+
 fetch('./Sahara users.json')
     .then(function (response) {
         return response.json();
@@ -26,9 +32,9 @@ fetch('./Sahara users.json')
     });
 
 
-import users from './Sahara users.json' assert {type: 'json'};
+//import users from './Sahara users.json' assert {type: 'json'};
 
-consol.log(users);
+//console.log(users);
 
 /*
 import java.io.File; 
@@ -49,16 +55,68 @@ class MyClass {
 }
 */
 
-<input type="file" id="Get_File"> </input> // Set type and Id
+//<input type="file" id="Get_File"> </input> // Set type and Id
 
-document.getElementById("Get_File").addEventListener("change", function () {
-    var read = document.getElementById("Get_File").files[0]; //Outline the file to be read
-    var fileread = new FileReader();
-    fileread.onload = function (e) {
-        var cont = e.target.result;
-        var stuffs = JSON.parse(cont); // Making array of objects
-        consol.log(stuffs); // Index every object
+
+
+//window.addEventListener("DOMContentLoaded", (event) => (No error No Worky)
+//window.onload = function ()
+
+/* Unrelated
+var isTabActive;
+
+window.onfocus = function () {
+    isTabActive = true;
+};
+
+window.onblur = function () {
+    isTabActive = false;
+};
+
+// test
+setInterval(function () {
+    console.log(window.isTabActive ? 'active' : 'inactive');
+}, 1000);
+*/
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    const doc = document.getElementById("Get_File")
+    if (doc) {
+        doc.addEventListener("change", function () {
+            var read = document.getElementById("Get_File").files[0]; //Outline the file to be read
+            var fileread = new FileReader();
+            fileread.onload = function (e) {
+                var cont = e.target.result;
+                var stuffs = JSON.parse(cont); // Making array of objects
+                console.log(stuffs); // Index every object
+            };
+            fileread.readAsText(read); console.log("Hallo from within the .Json code");
+
+        });
+
     };
-    fileread.readAsText(read);
 
 });
+
+
+
+function Opened() {
+    javascript: (
+        function Gener() {
+            prompt('Your Secure Password:',
+                window.crypto.getRandomValues(new BigUint64Array(4)).reduce(
+                    (prev, curr, index) => (
+                        !index ? prev : prev.toString(36)
+                    ) + (
+                            index % 2 ? curr.toString(36).toUpperCase() : curr.toString(36)
+                        )
+                ).split('').sort(() => 128 -
+                    window.crypto.getRandomValues(new Uint8Array(1))[0]
+                ).join('')
+            );
+        }
+    )();
+};  
+
+console.log("Hallo, if you are reading this then it means the Java works and gets to this point");

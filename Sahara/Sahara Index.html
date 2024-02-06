@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title> Saharah Security Solutions </title> <!--Shows in the internet tab-->
-    <link rel="stylesheet" type="text/css" href="Sahara Style.css" />
-    <script src="Sahara Script.js"></script>
+    <link rel="stylesheet" type="text/css" href="Sahara_Style.css" />
+    <script defer src="Sahara Script.js"></script>
 </head>
 <body>
 
@@ -82,7 +82,7 @@
 
 
     <dir class="container">
-        <button class="open" id="open" onclick="open_box()">Open me</button>
+        <button class="open" id="open" onclick="open_box()">Log-in</button>
         <dir class="box" id="box">
             <span class="close"> <button class="close-b" onclick="close_box()">X</button> </span>
             <h2>Log-in</h2>
@@ -114,46 +114,25 @@
     <!-- END OF WORKING BUTTON ! -->
     <!-- Start of Passwrod Generator ! -->
 
-    <script>
-
-        function Opened() {
-            javascript: (
-                function Gener() {
-                    prompt('Your Secure Password:',
-                        window.crypto.getRandomValues(new BigUint64Array(4)).reduce(
-                            (prev, curr, index) => (
-                                !index ? prev : prev.toString(36)
-                            ) + (
-                                    index % 2 ? curr.toString(36).toUpperCase() : curr.toString(36)
-                                )
-                        ).split('').sort(() => 128 -
-                            window.crypto.getRandomValues(new Uint8Array(1))[0]
-                        ).join('')
-                    );
-                }
-            )();
-        }
-
-    </script>
-
-    <style>
-        .open2 {
-            border: none;
-            padding: 10px 25px;
-            background-color: orangered;
-            color: white;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 5px;
-            position: absolute;
-            left: 100px;
-            top: 750px;
-        }
-    </style>
-
     <dir class="Generator">
         <button class="open2" id="PG" onclick="Opened()">Press ME!</button>
     </dir>
+
+    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+
+    <hr width="100%" color="#575757">
+    
+    
+    <div id="PGBox">
+
+
+        <h2> The Password Generator </h2>
+
+        <p>
+            This is the amazing sahara password generator, I hope ! <br> This is just to test <br> Hopefully the back is fine
+        </p>
+
+    </div>
 
     <!-- End Of Password Generator -->
 
