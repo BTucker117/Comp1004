@@ -6,7 +6,8 @@
 body {
     background-image: url(Background.jpg);
     background-repeat: no-repeat;
-    background-size: 1475px 826.5px;
+    background-size: cover;
+    /*background-size: 1475px 826.5px;*/
 } /*Background image added to the page body*/
 
 #Title{

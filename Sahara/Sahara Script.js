@@ -82,10 +82,11 @@ setInterval(function () {
 window.addEventListener("DOMContentLoaded", function() {
 
     const doc = document.getElementById("Get_File")
+    console.log("Hallo from before the .Json code, Lets hope we go in")
     if (doc) {
-        doc.addEventListener("change", function () {
+        doc.addEventListener("change", function () { console.log("Hallo ?!") /* THIS IS WHERE ISSUES OCCOUR. WE DON'T ENTER THIS FUNCTION */
             var read = document.getElementById("Get_File").files[0]; //Outline the file to be read
-            var fileread = new FileReader();
+            var fileread = new FileReader(); console.log("Hallo from before online, do you copy?");
             fileread.onload = function (e) {
                 var cont = e.target.result;
                 var stuffs = JSON.parse(cont); // Making array of objects
@@ -96,9 +97,10 @@ window.addEventListener("DOMContentLoaded", function() {
         });
 
     };
+    console.log("Hallo from the end if statement. Do you see this ?")
 
 });
-
+console.log("Hallo from after the .Json, did we go into the code?")
 
 
 function Opened() {
