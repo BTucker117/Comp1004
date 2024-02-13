@@ -18,6 +18,12 @@ function close_box() {
     openb.style.display = "block";
 }
 
+Username = null; Password = null;
+function Input() {
+    Username = document.getElementById("Username").value;
+    Password = document.getElementById("Password").value;
+    console.log("Username: ", Username, "Password: ", Password);
+};
 
 /*
 
@@ -120,3 +126,43 @@ function Opened() {
 };  
 
 console.log("Hallo, if you are reading this then it means the Java works and gets to this point");
+
+
+//Basic inner .Json
+
+const Admin_account = {Username:"Admin", Password: "Admin1", Type: "Superuser", ID: "000"}
+console.log(Admin_account.Username, ":", Admin_account.Password, ":", Admin_account.Type, ":", Admin_account.ID);
+
+account = {Username: [], Password: [], Type: [], ID: []};
+console.log(account.Username[1], ":", account.Password[1], ":", account.Type[1], ":", account.ID[1]); //Test
+New_ID = null;
+ID();
+
+console.log(New_ID);
+
+function ID() {
+    console.log("HAllo ?!");
+    Temp_ID_Ad = 0; Temp_ID_Norm = null;
+    Temp_string_Ad = JSON.stringify(Admin_account.ID);
+    Temp_string_Norm = JSON.stringify(account.ID);
+
+    try {
+        Temp_ID_Ad = Interger.parseInt(Temp_string_Ad)
+    } catch {
+        Temp_ID_Ad = 0;
+    }
+    console.log(Temp_ID_Ad, "New ID would be", Temp_ID_Ad + 1);
+
+    try {
+        Temp_ID_Norm = Interger.parseInt(Temp_string_Norm)
+    } catch {
+        Temp_ID_Norm = 1;
+    }
+
+    console.log("Hallo Do we get ere ? Norm is", Temp_ID_Norm);
+    if (Temp_ID_Norm == null)
+        New_ID = 1;
+
+    else if (Temp_ID_Norm =! null)
+        New_ID = Temp_ID_Norm + 1;
+}

@@ -76,3 +76,16 @@ p1 {
     #PG:hover {
         color: red;
     }
+
+#subbutton {
+    border: none;
+    padding: 5px 10px;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    position: absolute;
+    left: 115px;
+    top: 110px;
+}

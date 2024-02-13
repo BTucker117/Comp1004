@@ -46,7 +46,7 @@
         .box {
             background-color: #333;
             width: 300px;
-            height: 100px;
+            height: 125px;
             color: white;
             text-align: center;
             font-size: 12px;
@@ -87,15 +87,18 @@
             <span class="close"> <button class="close-b" onclick="close_box()">X</button> </span>
             <h2>Log-in</h2>
             <form>
-                Username: <input type="text" name="Username" placeholder="Username" />
+                Username: <input type="text" name="Username" placeholder="Username" id="Username"/>
                 <br>
-                Password: <input type="text" name="Password" placeholder="Password" />
+                Password: <input type="password" name="Password" placeholder="Password" id="Password" />
+                <br> <br>
+                <button id="subbutton" type="button" onclick="Input()">Print Name</button>
             </form>
         </dir>
     </dir>
 
 
-    <script>
+    <!--<script>
+        //JavaScript file now working, this tag not required
         var openb = document.getElementById("open");
 
         var box = document.getElementById("box");
@@ -109,7 +112,7 @@
             box.style.display = "none";
             openb.style.display = "block";
         }
-    </script>
+    </script> --> 
 
     <!-- END OF WORKING BUTTON ! -->
     <!-- Start of Passwrod Generator ! -->
