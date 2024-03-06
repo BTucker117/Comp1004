@@ -139,6 +139,7 @@ account = {Username: [], Password: [], Type: [], ID: []};
 console.log(account.Username[1], ":", account.Password[1], ":", account.Type[1], ":", account.ID[1]); //Test
 New_ID = null;
 ID();
+Account_Input();
 
 console.log(New_ID);
 
@@ -167,4 +168,27 @@ function ID() {
 
     else if (Temp_ID_Norm =! null)
         New_ID = Temp_ID_Norm + 1;
+}
+function Account_Input() { //New Input function
+    
+    Username_new = document.getElementById("Username").value;
+    Password_new = document.getElementById("Password").value;
+    New_Acc = New_ID + 1;
+
+    account.Username[New_Acc] = Username_new;
+    account.Password[New_Acc] = Password_new;
+    account.Type[New_Acc] = "Standard";
+    account.ID[New_Acc] = New_Acc;
+
+    console.log(account.Username[New_Acc], ":", account.Password[New_Acc], ":", account.Type[New_Acc], ":", account.ID[New_Acc]); //Test 2
+    let NeW_Account = {
+        "Username": Username_new,
+        "Password": Password_new,
+        "Id": New_Acc
+    }
+   
+
+    localStorage.setItem('myStroage', JSON.stringify(account)); //Save the JSON file to local storage
+    var bob = JSON.parse(localStorage.getItem('myStorage')); //Retrieve the JSON file from local storage
+
 }
