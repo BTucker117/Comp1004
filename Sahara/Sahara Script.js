@@ -191,4 +191,33 @@ function Account_Input() { //New Input function
     localStorage.setItem('myStroage', JSON.stringify(account)); //Save the JSON file to local storage
     var bob = JSON.parse(localStorage.getItem('myStorage')); //Retrieve the JSON file from local storage
 
+    var x = document.getElementById("Hide");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+
+    var y = document.getElementById("Return");
+    if (y.style.display === "none") {
+        y.style.display = "block";
+    } else {
+        y.style.display = "none";
+    }
+
+}
+
+ 
+function Change_date() {
+    function add3Months(today) {
+        var day = today.getDate();
+        today.setMonth(today.getMonth() + +3)
+        if (today.getDate() != day)
+            today.setDate(0);
+        return today;
+    }
+    
+    console.log(add3Months(new Date()));
+    var change = add3Months(new Date());
+    prompt('You Should change you Password on', change);
 }

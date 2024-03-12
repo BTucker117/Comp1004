@@ -14,13 +14,11 @@
         <img class="logo" src="Sahara Logo.JPG" width="318" height="293" alt="Sahara Logo" /> <!--This is the logo img in top left-->
     </div>
     <br>     <br>     <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>
-
-    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>
-
+    <section id="Hide">
     <p1>
         This is the Sahara Password managaer. A new password managment software for anybody who
-        uses <br> the internet and wants to keep all their accounts and information secure. This passowrd manager allows
-        <br> users to store all of their passwords in once place and only have to remember one password.
+        uses <br> the internet and wants to keep all their accounts and information secure. This passowrd manager <br>
+        allows users to store all of their passwords in once place and only have to remember one password.
     </p1>
 
     <!--  WORKING BUTTON !  -->
@@ -87,7 +85,7 @@
             <span class="close"> <button class="close-b" onclick="close_box()">X</button> </span>
             <h2>Log-in</h2>
             <form>
-                Username: <input type="text" name="Username" placeholder="Username" id="Username"/>
+                Username: <input type="text" name="Username" placeholder="Username" id="Username" />
                 <br>
                 Password: <input type="password" name="Password" placeholder="Password" id="Password" />
                 <br> <br>
@@ -112,38 +110,59 @@
             box.style.display = "none";
             openb.style.display = "block";
         }
-    </script> --> 
-
+    </script> -->
     <!-- END OF WORKING BUTTON ! -->
-    <!-- Start of Passwrod Generator ! -->
+    <!-- Start of Password Calendar -->
+    
+    <br>
+    <hr class="PassCal" color="#575757">
+    <h2> The Passwrod Calendar </h2>
 
+    <p2> 
+    Did you Know That you should change your password every 3 months/90 days? Do you remeber when the last
+    time you changed you password, if at all ? Now is the time to change your password if its out of date.
+    Firstly, make sure that you change your password today, to begin your journey to a more secure digital
+    presense. Then simply press the button, to see when you should next change your password !
+    </p2> 
+    
+    
+    <button class="date" id="date" onclick="Change_date()"> Change Password Date </button>
+
+    <!-- End of Password Calendar -->
+    <!-- Start of Passwrod Generator ! -->
+    
     <dir class="Generator">
         <button class="open2" id="PG" onclick="Opened()">Generate a Random Password</button>
     </dir>
 
-    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+    <br>    <br>    <br>    <br>
 
     <hr width="100%" color="#575757">
-    
-    
+
+
     <div id="PGBox">
 
 
         <h2> The Password Generator </h2>
 
         <p>
-            This is the amazing sahara password generator! All you have to do is press the generator button and 
-            you will get a truely random password from 48 to 52 characters long, to ensure security with no relation 
+            This is the amazing sahara password generator! All you have to do is press the generator button and
+            you will get a truely random password from 48 to 52 characters long, to ensure security with no relation
             to you such as hobby, pet name or special date, making it super difficult for it to be cracked. This means
             that your online accounts can finaly be kept safe so that only you can access them and no one else.
             <br> <br> <br> <br>
         </p>
 
-        
+
     </div>
 
     <!-- End Of Password Generator -->
-
+    </section>
+   
+    <section>
+        <button id="Return" type="button" onclick="Account_Input()">Return to home</button>
+    </section>
+    
 
 
 </body>
