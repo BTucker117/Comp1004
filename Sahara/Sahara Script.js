@@ -142,6 +142,7 @@ ID();
 Account_Input();
 
 console.log(New_ID);
+New_Acc = 0;
 
 function ID() {
     console.log("HAllo ?!");
@@ -169,6 +170,7 @@ function ID() {
     else if (Temp_ID_Norm =! null)
         New_ID = Temp_ID_Norm + 1;
 }
+
 function Account_Input() { //New Input function
     
     Username_new = document.getElementById("Username").value;
@@ -188,9 +190,13 @@ function Account_Input() { //New Input function
     }
    
 
-    localStorage.setItem('myStroage', JSON.stringify(account)); //Save the JSON file to local storage
-    var bob = JSON.parse(localStorage.getItem('myStorage')); //Retrieve the JSON file from local storage
+    //localStorage.setItem('myStroage', JSON.stringify(account)); //Save the JSON file to local storage
+    //var bob = JSON.parse(localStorage.getItem('myStorage')); //Retrieve the JSON file from local storage
 
+    Hide();
+}
+
+function Hide(){
     var x = document.getElementById("Hide");
     if (x.style.display === "block") {
         x.style.display = "none";
@@ -204,7 +210,6 @@ function Account_Input() { //New Input function
     } else {
         y.style.display = "none";
     }
-
 }
 
  
@@ -220,4 +225,48 @@ function Change_date() {
     console.log(add3Months(new Date()));
     var change = add3Months(new Date());
     prompt('You Should change you Password on', change);
+}
+
+
+//EXPERIMANTATION//
+
+function convertToJSON() {
+    var username = document.getElementById('Username').value;
+    var password = document.getElementById('Password').value;
+  
+    var jsonObject = {
+      "UserName": username,
+      "Password": password,
+      "User Type": "Standard",
+      "Accounnt ID": New_Acc,
+    }
+  
+    document.getElementById('subbutton').value = JSON.stringify(jsonObject)
+}
+  
+
+function saveToFile() {
+    convertToJSON();
+    var jsonObjectAsString = document.getElementById('subbutton').value;
+  
+    var blob = new Blob([jsonObjectAsString], {
+      //type: 'application/json'
+      type: 'octet/stream'
+    });
+    console.log(blob);
+  
+    var anchor = document.createElement('a')
+    anchor.download = "Sahara_user.json";
+    anchor.href = window.URL.createObjectURL(blob);
+    //anchor.innerHTML = "Print NAme"
+    anchor.click();
+  
+    console.log(anchor);
+  
+    document.getElementById('subbutton').append(anchor)
+}
+
+function Log_in(){
+    Account_Input();
+    saveToFile();
 }
