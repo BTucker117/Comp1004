@@ -33,8 +33,8 @@
             font-size: 18px;
             border-radius: 5px;
             position: absolute;
-            left: 88%;
-            top: 30%;
+            left: 85%;
+            top: 28%;
         }
 
             .open:hover {
@@ -159,8 +159,17 @@
     <!-- End Of Password Generator -->
     </section>
    
-    <section>
+    <section id="Hidden">
         <button id="Return" type="button" onclick="Hide()">Return to home</button>
+        <p1> This is where you can enter your account details including: Username and Password. </p1>
+
+        <div id="account_box">
+            Username: <input type="text" name="Username" placeholder="Username" id="Username" />
+
+            Password: <input type="password" name="Password" placeholder="Password" id="Password" />
+        </div>
+        <button id="Add" type="button" onclick="Add()"> Add New Account </button>
+
     </section>
     
 

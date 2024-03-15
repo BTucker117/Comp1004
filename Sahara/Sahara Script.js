@@ -210,6 +210,13 @@ function Hide(){
     } else {
         y.style.display = "none";
     }
+
+    var y = document.getElementById("Hidden");
+    if (y.style.display === "none") {
+        y.style.display = "block";
+    } else {
+        y.style.display = "none";
+    }
 }
 
  
@@ -269,4 +276,10 @@ function saveToFile() {
 function Log_in(){
     Account_Input();
     saveToFile();
+}
+
+function Add() {
+    var element = document.getElementById('Add');
+    let new_element = element.cloneNode(true);
+    element.after(new_element);
 }

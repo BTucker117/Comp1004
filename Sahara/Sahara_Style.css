@@ -72,7 +72,7 @@ p1 {
     border-radius: 5px;
     position: absolute;
     left: 40%;
-    top: 113%;
+    top: 105%;
 }
 
     #PG:hover {
@@ -110,7 +110,7 @@ p2 {
 #date{
     position: absolute;
     left: 41.5%;
-    top: 55%;
+    top: 75%;
     width: 250px;
     padding: 5px;
     background-color: orangered;
@@ -132,4 +132,22 @@ p2 {
     position: absolute;
     left: 72%;
     top: 12%;
+}
+
+#account_box {
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+    padding: 15px;
+    position: absolute;
+    top: 48%;
+}
+
+#Add {
+    background-color: orangered;
+    color: white;
+    border: solid black 2px;
+    position: absolute;
+    left: 77%;
+    top: 48%;
 }
