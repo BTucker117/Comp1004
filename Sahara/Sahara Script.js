@@ -196,7 +196,7 @@ function Account_Input() { //New Input function
     Hide();
 }
 
-function Hide(){
+function Hide(){ // A function to hide all the current elements on the screen
     var x = document.getElementById("Hide");
     if (x.style.display === "block") {
         x.style.display = "none";
@@ -220,18 +220,18 @@ function Hide(){
 }
 
  
-function Change_date() {
+function Change_date() { // Function to add 3 months to the current date
     function add3Months(today) {
-        var day = today.getDate();
-        today.setMonth(today.getMonth() + +3)
-        if (today.getDate() != day)
+        var day = today.getDate(); // Get today's date and time
+        today.setMonth(today.getMonth() + +3) // Add 3 months to today's date
+        if (today.getDate() != day) // Fail safe incase of error
             today.setDate(0);
         return today;
     }
     
-    console.log(add3Months(new Date()));
+    console.log(add3Months(new Date())); // Internal check for testing 
     var change = add3Months(new Date());
-    prompt('You Should change you Password on', change);
+    prompt('You Should change you Password on', change); // Promt to output the new date 3 months later
 }
 
 
@@ -254,32 +254,35 @@ function convertToJSON() {
 
 function saveToFile() {
     convertToJSON();
-    var jsonObjectAsString = document.getElementById('subbutton').value;
+    var jsonObjectAsString = document.getElementById('subbutton').value; //Get the input from button
   
     var blob = new Blob([jsonObjectAsString], {
-      //type: 'application/json'
+      //type: 'application/json' //Testing
       type: 'octet/stream'
     });
     console.log(blob);
   
     var anchor = document.createElement('a')
-    anchor.download = "Sahara_user.json";
+    anchor.download = "Sahara_user.json"; // Downloads the username and password entered on the button press
     anchor.href = window.URL.createObjectURL(blob);
-    //anchor.innerHTML = "Print NAme"
     anchor.click();
   
-    console.log(anchor);
+    console.log(anchor); //Out put the anchor to the log for testing purposes only
   
     document.getElementById('subbutton').append(anchor)
 }
 
-function Log_in(){
+function Log_in(){ // Function when log in button pressed
     Account_Input();
-    saveToFile();
+    saveToFile(); 
 }
 
+var z = 0;
+var first = document.getElementById('account_box_container'); //Get the first account box and dupelicate it
 function Add() {
-    var element = document.getElementById('Add');
-    let new_element = element.cloneNode(true);
-    element.after(new_element);
+    z++;
+    var dupe = first.cloneNode('true'); // Clones the div
+    dupe.id = 'account_box_container' + z; // Gives a new ID of the original +1
+    first.parentNode.appendChild(dupe);
+    console.log('Function Test: Do we get here log #01')
 }
