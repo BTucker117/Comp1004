@@ -139,8 +139,7 @@ p2 {
     border-color: black;
     border-width: 2px;
     padding: 15px;
-    position: absolute;
-    top: 48%;
+    width: 500px;
 }
 
 #Add {
