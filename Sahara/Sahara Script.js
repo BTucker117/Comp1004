@@ -275,6 +275,7 @@ function saveToFile() {
 function Log_in(){ // Function when log in button pressed
     Account_Input();
     saveToFile(); 
+    saveToLocal();
 }
 
 var z = 0;
@@ -285,4 +286,32 @@ function Add() {
     dupe.id = 'account_box_container' + z; // Gives a new ID of the original +1
     first.parentNode.appendChild(dupe);
     console.log('Function Test: Do we get here log #01')
+}
+
+/* Saving a JSON file Locally */
+
+function saveToLocal(){
+    var jsonObjectAsString = document.getElementById('subbutton').value;
+
+    var username_L = document.getElementById('Username').value; // Get the inputted Username
+    var password_L = document.getElementById('Password').value; // Get the inputted Password
+    var details = ["Username: ",username_L,"Password: ", password_L,"Account Type: ","Standard","Account ID: ", New_Acc]; //Save to JSON
+    localStorage.setItem("Sahara_Users", JSON.stringify(details)) // Store the JSON to local storage
+    loadLocal();
+}
+
+var load;
+saveToLocal();
+loadLocal();
+console.log("Hallo ? do we get to here ???");
+function loadLocal (){
+    load = JSON.parse(localStorage.getItem("Sahara_Users")); //Load the item 'Sahara_Users' from local storage
+    console.log(load); //Output the content from var load to console as a test
+    ThisAccount(); 
+}
+
+function ThisAccount() {
+    console.log(load); // Test to ensure load is not empty and can be accessed
+    document.getElementById("This_Account").innerHTML=load; //Copy the content of 'load' to the HTML doc
+    console.log("HI"); // Test to ensure the code gets to this point and the previous line has run
 }
