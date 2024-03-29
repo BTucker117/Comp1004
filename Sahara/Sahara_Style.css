@@ -139,7 +139,7 @@ p2 {
     border-color: black;
     border-width: 2px;
     padding: 15px;
-    width: 500px;
+    width: 750px;
 }
 
 #Add {
@@ -149,4 +149,13 @@ p2 {
     position: absolute;
     left: 77%;
     top: 48%;
+}
+
+#In {
+    background-color: orangered;
+    color: white;
+    border: solid black 2px;
+    position: absolute;
+    left: 78%;
+    top: 25%;
 }

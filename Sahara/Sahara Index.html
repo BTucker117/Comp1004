@@ -161,15 +161,20 @@
    
     <section id="Hidden">
         <button id="Return" type="button" onclick="Hide()">Return to home</button>
-        <p1> This is where you can enter your account details including: Username and Password. </p1>
+        <p1> This is where you can enter your account details including: Username and Password. <br>
+        The function to download your accounts usernames and passwords for each website, <br>then re-upload
+        them is still in development and will soon be available.</p1>
+
         <br> <br> <p1> Your details for this account have been loaded for you to see bellow: </p1> <br> <br>
-        <p3 id="This_Account" href = test.html></p3>
+        <p3 id="This_Account" href=test.html></p3>
 
         <div id="account_box_container">
             <div id="account_box">
-                Username: <input type="text" name="Username" placeholder="Username" id="Username" />
+                Website: <input type="text" name="Website" placeholder="Website" id="Site" />
 
-                Password: <input type="password" name="Password" placeholder="Password" id="Password" />
+                Username: <input type="text" name="Username" placeholder="Username" id="Acc_Username" />
+
+                Password: <input type="password" name="Password" placeholder="Password" id="Acc_Password" />
             </div>
 
             <br>    <br>
@@ -178,6 +183,8 @@
 
 
         <button id="Add" type="button" onclick="Add()"> Add New Account </button>
+        <button id="In" type="button" onclick="read()"> Import Account </button> 
+        <!-- Upload function not currently working, unsure of how to get working! -->
 
     </section>
     

@@ -278,7 +278,7 @@ function Log_in(){ // Function when log in button pressed
     saveToLocal();
 }
 
-var z = 0;
+var z = 0, No_Acc = 1;
 var first = document.getElementById('account_box_container'); //Get the first account box and dupelicate it
 function Add() {
     z++;
@@ -286,6 +286,8 @@ function Add() {
     dupe.id = 'account_box_container' + z; // Gives a new ID of the original +1
     first.parentNode.appendChild(dupe);
     console.log('Function Test: Do we get here log #01') //Test
+    Account_Save();
+    No_Acc++
 }
 
 /* Saving a JSON file Locally */
@@ -314,4 +316,122 @@ function ThisAccount() { // A function to copy Json contents to the HTML page
     console.log(load); // Test to ensure load is not empty and can be accessed
     document.getElementById("This_Account").innerHTML=load; //Copy the content of 'load' to the HTML doc
     console.log("HI"); // Test to ensure the code gets to this point and the previous line has run
+}
+
+var JSONObj1, JSONObj, pwRows, JSONObj2;
+function Account_Save() { //A function to add multiple accounts to the Json file currently not working
+    
+    for (var v = 0; v < No_Acc; v++) {
+        var row = JSON.parse("{ \"account\": null, \"Site\": null, \"Username\": null, \"Password\": null}")
+
+        var Site = encryptString(document.getElementById("Site" + v.toString()));
+        var Username_T = encryptString(document.getElementById("Acc_Username" + v.toString()));
+        var Passwrod_T = encryptString(document.getElementById("Acc_Password" + v.toString()));
+
+        row.account = v;
+        row.website = Site;
+        row.username = Username_T;
+        row.password = Passwrod_T;
+
+    }
+
+    //saveToFileNew();
+}
+
+function saveToFileNew(data) {
+    convertToJSON();
+    var jsonObjectAsString = document.getElementById('Acc_Username').value; //Get the input from button
+    var jsonObjectAsString1 = document.getElementById('Acc_Password').value;
+    var jsonObjectAsString2 = document.getElementById('Site').value;
+
+    var blob = new Blob([jsonObjectAsString], {
+        //type: 'application/json' //Testing
+        type: 'octet/stream'
+    });
+    console.log(blob); //Test
+
+    var blob1 = new Blob([jsonObjectAsString1], {
+        //type: 'application/json' //Testing
+        type: 'octet/stream'
+    });
+    console.log(blob1); //Test
+
+    var blob2 = new Blob([jsonObjectAsString2], {
+        //type: 'application/json' //Testing
+        type: 'octet/stream'
+    });
+    console.log(blob2); //Test
+
+    var anchor = document.createElement('a')
+    anchor.download = "Sahara_user.json"; // Downloads the username and password entered on the button press
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.click();
+}
+
+function hash() {
+    var hash = 0, n, char;
+    if (this.length === 0) return hash;
+    for (n = 0; n < this.length; n++) {
+        char = this.charCodeAt(n);
+        hash = ((hash << 5) - hash) + char;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+
+
+
+console.log(hash.hashCode());
+
+}
+
+function read() { // A function to read in a Json file ** NOT WORKING **
+    var infile = document.getElementById('In').files[0];
+
+    file = infile.name;
+    var read = new FileReader();
+
+    read.onload = function (f) {
+
+        var innerds = e.target.result;
+
+        JSONObj = JSON.parse(innerds);
+        pwRows = JSONObj.rows;
+
+        fileLoaded = true;
+
+        return fileLoaded;
+    }
+
+    read.readAsText(infile);
+
+    return;
+}
+
+function encryptString(data) {
+
+    const enc = new TextEncoder();
+    const encodedMessage = enc.encode('hello');
+    const keyPair = window.crypto.subtle.generateKey({
+        name: "RSASSA-PKCS1-v1_5",
+        modulusLength: 4096,
+        publicExponent: new Uint8Array([1, 0, 1]),
+        hash: "SHA-256"
+    },
+        true,
+        ["sign", "verify"]
+    );
+
+    (async () => {
+        const {
+            privateKey,
+            publicKey
+        } = await keyPair;
+        const signature = await window.crypto.subtle.sign(
+            "RSASSA-PKCS1-v1_5",
+            privateKey,
+            encodedMessage
+        );
+        const signatureValid = await window.crypto.subtle.verify("RSASSA-PKCS1-v1_5", publicKey, signature, encodedMessage);
+        console.log(signatureValid);
+    })()
 }
